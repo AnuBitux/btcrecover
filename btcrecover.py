@@ -26,12 +26,14 @@
 # PYTHON_ARGCOMPLETE_OK - enables optional bash tab completion
 
 import compatibility_check
+import os
 
 from btcrecover import btcrpass
 import sys, multiprocessing
 
 if __name__ == "__main__":
 	print()
+	os.chdir('/opt/Tools/Recovery/btcrecover/')
 	print("Starting", btcrpass.full_version(),
 		  file=sys.stderr if any(a.startswith("--listp") for a in sys.argv[1:]) else sys.stdout)  # --listpass
 
