@@ -26,12 +26,14 @@
 # PYTHON_ARGCOMPLETE_OK - enables optional bash tab completion
 
 import compatibility_check
+import os
 
 from btcrecover import btcrseed
 import sys, multiprocessing
 
 if __name__ == "__main__":
     print()
+    os.chdir('/opt/Tools/Recovery/btcrecover/')
     print("Starting", btcrseed.full_version())
 
     btcrseed.register_autodetecting_wallets()
